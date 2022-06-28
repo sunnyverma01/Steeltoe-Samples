@@ -1,11 +1,14 @@
-﻿---
+---
 applications:
 - name: fortuneService
   buildpacks:
    - dotnet_core_buildpack
   memory: 256M
-  command: cd ${HOME} && ./Fortune-Teller-Service
+  path: bin\Debug\publish
+  routes:
+    - route: fortune-api.domain.net/Service
+  command: ./Fortune-Teller-Service
   env:
     ASPNETCORE_ENVIRONMENT: Development
   services:
-   - myDiscoveryService
+   - service-registry
