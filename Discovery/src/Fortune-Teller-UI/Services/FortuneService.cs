@@ -7,7 +7,7 @@ namespace Fortune_Teller_UI.Services
     public class FortuneService : IFortuneService
     {
         ILogger<FortuneService> _logger;
-        private const string RANDOM_FORTUNE_URL = "random";
+        private const string RANDOM_FORTUNE_URL = "api/fortunes/random";
         private readonly HttpClient _httpClient;
 
         public FortuneService(HttpClient httpClient, ILoggerFactory logFactory) 
