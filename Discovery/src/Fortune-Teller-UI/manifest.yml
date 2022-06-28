@@ -3,10 +3,11 @@ applications:
 - name: fortuneui
   buildpacks:
    - dotnet_core_buildpack
-  memory: 256M
-  disk_quota: 200M
-  command: cd ${HOME} && ./Fortune-Teller-UI
+  memory: 512MB
+  disk_quota: 512MB
+  path: bin\Debug\publish
+  command: ./Fortune-Teller-UI
   env:
     ASPNETCORE_ENVIRONMENT: Development
   services:
-    - myDiscoveryService
+    - service-registry
